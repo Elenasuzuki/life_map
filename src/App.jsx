@@ -46,6 +46,7 @@ function clampDriveMinutes(value) {
 
 export default function App() {
   const [authed, setAuthed] = useState(isAuthenticated)
+  const [panelOpen, setPanelOpen] = useState(false)
   const [layers, setLayers]         = useState(DEFAULT_LAYERS)
   const [baseMap, setBaseMap]       = useState(() => {
     const saved = window.localStorage.getItem(BASEMAP_STORAGE_KEY)
@@ -94,13 +95,25 @@ export default function App() {
         onDriveMinutesChange={handleDriveMinutesChange}
         onBulkDisplayLayersChange={handleBulkDisplayLayers}
         onToggle={toggleLayer}
+        panelOpen={panelOpen}
+        onClose={() => setPanelOpen(false)}
       />
+      {panelOpen && (
+        <div className="panel-backdrop" onClick={() => setPanelOpen(false)} />
+      )}
       <main className="map-area">
         <MapView
           layers={layers}
           baseMap={baseMap}
           driveMinutes={driveMinutes}
         />
+        <button
+          className="panel-toggle-btn"
+          onClick={() => setPanelOpen(prev => !prev)}
+          aria-label="設定パネルを開く"
+        >
+          ☰
+        </button>
       </main>
     </div>
   )

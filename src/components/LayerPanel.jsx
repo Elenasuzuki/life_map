@@ -287,6 +287,8 @@ export default function LayerPanel({
   onDriveMinutesChange,
   onBulkDisplayLayersChange,
   onToggle,
+  panelOpen,
+  onClose,
 }) {
   const [openLegend, setOpenLegend] = useState(null)
   const legends = getLegendConfig(driveMinutes)
@@ -309,8 +311,11 @@ export default function LayerPanel({
   }
 
   return (
-    <aside className="layer-panel">
-      <h2 className="panel-title">住まい探しマップ</h2>
+    <aside className={`layer-panel${panelOpen ? ' panel-open' : ''}`}>
+      <div className="panel-header">
+        <h2 className="panel-title">住まい探しマップ</h2>
+        <button className="panel-close-btn" onClick={onClose} aria-label="閉じる">✕</button>
+      </div>
       <p className="panel-subtitle">背景地図とレイヤー表示を切替</p>
 
       <div className="basemap-section">

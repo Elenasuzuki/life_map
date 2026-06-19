@@ -16,6 +16,49 @@
   color: #e0e0e0;
 }
 
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-close-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.panel-close-btn:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .layer-panel {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    z-index: 1000;
+    transition: left 0.25s ease;
+    box-shadow: none;
+  }
+
+  .layer-panel.panel-open {
+    left: 0;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+  }
+
+  .panel-close-btn {
+    display: block;
+  }
+}
+
 .panel-title {
   font-size: 15px;
   font-weight: 700;

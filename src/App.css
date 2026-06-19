@@ -10,7 +10,50 @@
   flex: 1;
   position: relative;
   height: 100%;
-  margin-left: 260px; /* LayerPanel の幅 */
+  margin-left: 260px;
+}
+
+/* モバイル用トグルボタン（PCでは非表示） */
+.panel-toggle-btn {
+  display: none;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 500;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(15, 15, 30, 0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  line-height: 1;
+}
+
+.panel-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 900;
+}
+
+@media (max-width: 768px) {
+  .map-area {
+    margin-left: 0;
+  }
+
+  .panel-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .panel-backdrop {
+    display: block;
+  }
 }
 
 .maplibre-shell {
