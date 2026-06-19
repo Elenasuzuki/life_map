@@ -287,8 +287,6 @@ export default function LayerPanel({
   onDriveMinutesChange,
   onBulkDisplayLayersChange,
   onToggle,
-  orsApiKey,
-  onOrsKeyChange,
 }) {
   const [openLegend, setOpenLegend] = useState(null)
   const legends = getLegendConfig(driveMinutes)
@@ -426,42 +424,17 @@ export default function LayerPanel({
           <p className="drive-title">車アクセス時間</p>
           <span className="drive-value">{driveMinutes}分</span>
         </div>
-        <input
-          className="drive-slider"
-          type="range"
-          min="30"
-          max="60"
-          step="1"
-          value={driveMinutes}
-          onChange={e => onDriveMinutesChange(Number(e.target.value))}
-        />
-        <div className="drive-scale">
-          <span>30分</span>
-          <span>60分</span>
+        <div className="drive-buttons">
+          {[30, 35, 40, 45, 50, 55, 60].map(min => (
+            <button
+              key={min}
+              className={`drive-btn${driveMinutes === min ? ' active' : ''}`}
+              onClick={() => onDriveMinutesChange(min)}
+            >
+              {min}
+            </button>
+          ))}
         </div>
-      </div>
-
-      {/* ORS APIキー入力 */}
-      <div className="ors-section">
-        <p className="ors-title">ORS APIキー（任意）</p>
-        <p className="ors-note">
-          未設定時は各拠点のみ表示され、<br/>実時間ベースの車{driveMinutes}分圏は表示しません。
-        </p>
-        <input
-          className="ors-input"
-          type="password"
-          placeholder="5b3ce...your_ors_key"
-          value={orsApiKey}
-          onChange={e => onOrsKeyChange(e.target.value)}
-        />
-        <a
-          className="ors-link"
-          href="https://openrouteservice.org/dev/#/signup"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          無料でAPIキーを取得 →
-        </a>
       </div>
 
       {/* 凡例 */}

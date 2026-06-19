@@ -14,7 +14,6 @@ import {
   QUALIFYING_AICHILOOP_TOYOTA_STATIONS,
   WALK_RADIUS_M as AICHILOOP_WALK_RADIUS_M,
 } from '../data/aichiLoopToyota'
-import { useIsochrone } from '../hooks/useIsochrone'
 
 const CENTER = { lat: 34.97, lng: 137.08 }
 const ZOOM   = 10
@@ -392,7 +391,7 @@ function cloneStyle(style) {
   return JSON.parse(JSON.stringify(style))
 }
 
-export default function MapView({ layers, baseMap, driveMinutes, isochroneApiKey }) {
+export default function MapView({ layers, baseMap, driveMinutes }) {
   const mapNodeRef = useRef(null)
   const mapRef = useRef(null)
   const workplaceMarkersRef = useRef({})
@@ -414,7 +413,7 @@ export default function MapView({ layers, baseMap, driveMinutes, isochroneApiKey
   const [mapSnapshotUrl, setMapSnapshotUrl] = useState('')
   const [isBaseMapTransitioning, setIsBaseMapTransitioning] = useState(false)
   const activeBaseMap = BASE_MAPS[baseMap] ?? BASE_MAPS.pale
-  const { isochroneData, fetchIsochrone } = useIsochrone(isochroneApiKey)
+  const [isochroneData, setIsochroneData] = useState({})
   const driveSeconds = driveMinutes * 60
 
   useEffect(() => {
@@ -458,18 +457,17 @@ export default function MapView({ layers, baseMap, driveMinutes, isochroneApiKey
   }, [])
 
   useEffect(() => {
-    if (!isochroneApiKey) return
-
-    WORKPLACES.forEach((workplace) => {
-      fetchIsochrone({ lat: workplace.lat, lng: workplace.lng }, driveSeconds, workplace.id)
-      fetchIsochrone(
-        { lat: workplace.lat, lng: workplace.lng },
-        driveSeconds,
-        `${workplace.id}:highway`,
-        { avoidHighways: false }
-      )
-    })
-  }, [driveSeconds, fetchIsochrone, isochroneApiKey])
+    const newData = {}
+    const loads = WORKPLACES.flatMap((workplace) => [
+      fetch(`/data/drive_isochrones/${workplace.id}_no_highway_${driveMinutes}min.geojson`)
+        .then(r => r.ok ? r.json() : null)
+        .then(data => { if (data) newData[workplace.id] = data }),
+      fetch(`/data/drive_isochrones/${workplace.id}_highway_${driveMinutes}min.geojson`)
+        .then(r => r.ok ? r.json() : null)
+        .then(data => { if (data) newData[`${workplace.id}:highway`] = data }),
+    ])
+    Promise.all(loads).then(() => setIsochroneData(newData))
+  }, [driveMinutes])
 
   const isoLookup = useMemo(() => {
     if (!walkIsochroneData) return {}

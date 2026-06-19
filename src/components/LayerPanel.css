@@ -225,16 +225,26 @@
   color: #f3f3f3;
 }
 
-.drive-slider {
-  width: 100%;
-  accent-color: #9c27b0;
+.drive-buttons {
+  display: flex;
+  gap: 4px;
 }
 
-.drive-scale {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  color: #888;
+.drive-btn {
+  flex: 1;
+  padding: 4px 0;
+  font-size: 11px;
+  background: rgba(255,255,255,0.08);
+  color: #ccc;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.drive-btn.active {
+  background: #9c27b0;
+  color: #fff;
+  border-color: #9c27b0;
 }
 
 /* ── ORS セクション ── */

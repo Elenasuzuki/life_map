@@ -34,8 +34,13 @@ const BULK_DISPLAY_LAYER_KEYS = [
   'toyotaRailAccess',
 ]
 
+const VALID_DRIVE_MINUTES = [30, 35, 40, 45, 50, 55, 60]
+
 function clampDriveMinutes(value) {
-  return Math.max(30, Math.min(60, value))
+  const nearest = VALID_DRIVE_MINUTES.reduce((a, b) =>
+    Math.abs(b - value) < Math.abs(a - value) ? b : a
+  )
+  return nearest
 }
 
 export default function App() {
@@ -50,9 +55,6 @@ export default function App() {
       ? clampDriveMinutes(saved)
       : DEFAULT_DRIVE_MINUTES
   })
-  const [orsApiKey, setOrsApiKey]   = useState(
-    import.meta.env.VITE_ORS_API_KEY ?? ''
-  )
 
   const toggleLayer = (key) =>
     setLayers(prev => ({ ...prev, [key]: !prev[key] }))
@@ -88,15 +90,12 @@ export default function App() {
         onDriveMinutesChange={handleDriveMinutesChange}
         onBulkDisplayLayersChange={handleBulkDisplayLayers}
         onToggle={toggleLayer}
-        orsApiKey={orsApiKey}
-        onOrsKeyChange={setOrsApiKey}
       />
       <main className="map-area">
         <MapView
           layers={layers}
           baseMap={baseMap}
           driveMinutes={driveMinutes}
-          isochroneApiKey={orsApiKey}
         />
       </main>
     </div>
