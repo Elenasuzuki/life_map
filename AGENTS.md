@@ -25,6 +25,7 @@
 - 認証: [src/components/PasswordGate.jsx](src/components/PasswordGate.jsx) でSHA-256ハッシュ照合。認証済みフラグをlocalStorageに保存（`housing-map-auth-v1`）
 - 等時間圏: 事前生成ファイル（`public/data/drive_isochrones/`）を読み込む。ORS APIキー不要
 - 旧実装: `IsochroneLayer.jsx`・`useIsochrone.js`・`react-leaflet` 系依存は残っているが未使用
+- レスポンシブ対応: 768px以下でLayerPanelはオフスクリーン（left: -280px）に格納。マップ左上の☰ボタンでスライドインするドロワー式に切替。`panelOpen` state を App.jsx で管理し、バックドロップタップまたはパネル内✕ボタンで閉じる
 
 ## ディレクトリ構成
 
