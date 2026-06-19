@@ -1,5 +1,95 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './LayerPanel.css'
+
+function parseCoords(text) {
+  const m = text.match(/^\s*(-?\d+(?:\.\d+)?)[,\s]+(-?\d+(?:\.\d+)?)\s*$/)
+  if (!m) return null
+  const a = parseFloat(m[1])
+  const b = parseFloat(m[2])
+  // latitude is between -90 and 90
+  if (a >= -90 && a <= 90 && b >= -180 && b <= 180) return { lat: a, lng: b }
+  if (b >= -90 && b <= 90 && a >= -180 && a <= 180) return { lat: b, lng: a }
+  return null
+}
+
+async function geocodeAddress(text) {
+  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(text)}&format=json&limit=1&accept-language=ja`
+  const res = await fetch(url, { headers: { 'Accept-Language': 'ja' } })
+  if (!res.ok) throw new Error('geocode failed')
+  const data = await res.json()
+  if (!data.length) return null
+  return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon), label: data[0].display_name }
+}
+
+function SearchBox({ onSearchPin }) {
+  const [query, setQuery] = useState('')
+  const [status, setStatus] = useState('')
+  const [loading, setLoading] = useState(false)
+  const abortRef = useRef(null)
+
+  const handleSearch = async (e) => {
+    e.preventDefault()
+    const text = query.trim()
+    if (!text) return
+
+    const coords = parseCoords(text)
+    if (coords) {
+      onSearchPin({ ...coords, label: text })
+      setStatus('ピンを立てました')
+      return
+    }
+
+    setLoading(true)
+    setStatus('検索中...')
+    if (abortRef.current) abortRef.current.abort()
+    abortRef.current = new AbortController()
+
+    try {
+      const result = await geocodeAddress(text)
+      if (!result) {
+        setStatus('住所が見つかりませんでした')
+      } else {
+        onSearchPin(result)
+        setStatus('ピンを立てました')
+      }
+    } catch {
+      setStatus('検索に失敗しました')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleClear = () => {
+    setQuery('')
+    setStatus('')
+    onSearchPin(null)
+  }
+
+  return (
+    <div className="search-box">
+      <p className="section-title">住所・座標検索</p>
+      <form className="search-form" onSubmit={handleSearch}>
+        <input
+          className="search-input"
+          type="text"
+          placeholder="住所または 緯度,経度"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          disabled={loading}
+        />
+        <div className="search-actions">
+          <button className="search-btn" type="submit" disabled={loading || !query.trim()}>
+            {loading ? '…' : '検索'}
+          </button>
+          {(query || status) && (
+            <button className="search-clear-btn" type="button" onClick={handleClear}>✕</button>
+          )}
+        </div>
+      </form>
+      {status && <p className="search-status">{status}</p>}
+    </div>
+  )
+}
 
 function getLegendConfig(driveMinutes) {
   return {
@@ -289,6 +379,7 @@ export default function LayerPanel({
   onToggle,
   panelOpen,
   onClose,
+  onSearchPin,
 }) {
   const [openLegend, setOpenLegend] = useState(null)
   const legends = getLegendConfig(driveMinutes)
@@ -317,6 +408,8 @@ export default function LayerPanel({
         <button className="panel-close-btn" onClick={onClose} aria-label="閉じる">✕</button>
       </div>
       <p className="panel-subtitle">背景地図とレイヤー表示を切替</p>
+
+      <SearchBox onSearchPin={onSearchPin} />
 
       <div className="basemap-section">
         <p className="section-title">背景地図</p>

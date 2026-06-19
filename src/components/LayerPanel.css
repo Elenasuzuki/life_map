@@ -485,3 +485,69 @@
 .data-note ul { margin: 0; padding-left: 14px; line-height: 1.8; }
 .data-note a { color: #9c27b0; text-decoration: none; }
 .data-note a:hover { text-decoration: underline; }
+
+/* ── 検索ボックス ── */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.search-input {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 12px;
+  padding: 6px 8px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-input::placeholder { color: #666; }
+.search-input:focus { border-color: rgba(255,255,255,0.35); }
+
+.search-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.search-btn {
+  flex: 1;
+  background: #e53935;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-btn:hover:not(:disabled) { background: #c62828; }
+.search-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.search-clear-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 5px;
+  color: #aaa;
+  font-size: 11px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.search-clear-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+.search-status {
+  font-size: 10.5px;
+  color: #aaa;
+  margin: 0;
+}

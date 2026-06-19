@@ -391,11 +391,12 @@ function cloneStyle(style) {
   return JSON.parse(JSON.stringify(style))
 }
 
-export default function MapView({ layers, baseMap, driveMinutes }) {
+export default function MapView({ layers, baseMap, driveMinutes, searchPin }) {
   const mapNodeRef = useRef(null)
   const mapRef = useRef(null)
   const workplaceMarkersRef = useRef({})
   const shinkansenMarkersRef = useRef({})
+  const searchPinMarkerRef = useRef(null)
   const attributionRef = useRef(null)
   const styleCacheRef = useRef({})
   const transitionTimerRef = useRef(null)
@@ -1330,6 +1331,35 @@ export default function MapView({ layers, baseMap, driveMinutes }) {
     })
     setVisibility(map, ['intersection-fill', 'intersection-line'], layers.intersection)
   }, [carOverlapFeatures, intersectionData, layers, mapReady, styleLoaded])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !window.maplibregl) return
+
+    if (searchPinMarkerRef.current) {
+      searchPinMarkerRef.current.remove()
+      searchPinMarkerRef.current = null
+    }
+
+    if (!searchPin) return
+
+    const el = document.createElement('div')
+    el.style.cssText = 'width:28px;height:36px;cursor:pointer'
+    el.innerHTML = `<svg viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="#e53935" stroke="#b71c1c" stroke-width="1.2"/>
+      <circle cx="14" cy="14" r="5" fill="#fff" opacity="0.9"/>
+    </svg>`
+
+    const popup = new window.maplibregl.Popup({ offset: 36, closeButton: true })
+      .setHTML(`<div style="max-width:220px;word-break:break-all;font-size:12px">${searchPin.label ?? `${searchPin.lat}, ${searchPin.lng}`}</div>`)
+
+    searchPinMarkerRef.current = new window.maplibregl.Marker({ element: el, anchor: 'bottom' })
+      .setLngLat([searchPin.lng, searchPin.lat])
+      .setPopup(popup)
+      .addTo(map)
+
+    map.flyTo({ center: [searchPin.lng, searchPin.lat], zoom: Math.max(map.getZoom(), 13), duration: 800 })
+  }, [searchPin])
 
   return (
     <div className="maplibre-shell">

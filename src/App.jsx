@@ -48,6 +48,7 @@ export default function App() {
   const [authed, setAuthed] = useState(isAuthenticated)
   const [panelOpen, setPanelOpen] = useState(false)
   const [layers, setLayers]         = useState(DEFAULT_LAYERS)
+  const [searchPin, setSearchPin] = useState(null)
   const [baseMap, setBaseMap]       = useState(() => {
     const saved = window.localStorage.getItem(BASEMAP_STORAGE_KEY)
     return saved ?? DEFAULT_BASEMAP
@@ -97,6 +98,7 @@ export default function App() {
         onToggle={toggleLayer}
         panelOpen={panelOpen}
         onClose={() => setPanelOpen(false)}
+        onSearchPin={setSearchPin}
       />
       {panelOpen && (
         <div className="panel-backdrop" onClick={() => setPanelOpen(false)} />
@@ -106,6 +108,7 @@ export default function App() {
           layers={layers}
           baseMap={baseMap}
           driveMinutes={driveMinutes}
+          searchPin={searchPin}
         />
         <button
           className="panel-toggle-btn"
