@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import MapView from './components/MapView'
 import LayerPanel from './components/LayerPanel'
+import PasswordGate, { isAuthenticated } from './components/PasswordGate'
 import './App.css'
 
 const DEFAULT_LAYERS = {
@@ -44,6 +45,7 @@ function clampDriveMinutes(value) {
 }
 
 export default function App() {
+  const [authed, setAuthed] = useState(isAuthenticated)
   const [layers, setLayers]         = useState(DEFAULT_LAYERS)
   const [baseMap, setBaseMap]       = useState(() => {
     const saved = window.localStorage.getItem(BASEMAP_STORAGE_KEY)
@@ -79,6 +81,8 @@ export default function App() {
     setDriveMinutes(normalized)
     window.localStorage.setItem(DRIVE_MINUTES_STORAGE_KEY, String(normalized))
   }
+
+  if (!authed) return <PasswordGate onSuccess={() => setAuthed(true)} />
 
   return (
     <div className="app-shell">
