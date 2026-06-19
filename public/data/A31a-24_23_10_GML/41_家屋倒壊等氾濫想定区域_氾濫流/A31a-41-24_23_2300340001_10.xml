@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<ksj:Dataset
+		gml:id= "A31aDataset"
+		xmlns:ksj="http://nlftp.mlit.go.jp/ksj/schemas/ksj-app"
+		xmlns:gml="http://schemas.opengis.net/gml/3.2.1"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="https://nlftp.mlit.go.jp/ksj/jpgis/xsd/KsjAppSchema-A31a-v4_2.xsd">
+	<gml:description>国土数値情報（洪水浸水想定区域・家屋倒壊等氾濫（氾濫流））　2024年度</gml:description>
+	<gml:boundedBy>
+		<gml:EnvelopeWithTimePeriod srsName="JGD2011 / (B, L)" frame="GC / JST">
+			<gml:lowerCorner>20.0 120.0</gml:lowerCorner>
+			<gml:upperCorner>46.0 154.0</gml:upperCorner>
+			<gml:beginPosition calendarEraName="西暦">1900</gml:beginPosition>
+			<gml:endPosition indeterminatePosition="unknown"/>
+		</gml:EnvelopeWithTimePeriod>
+	</gml:boundedBy>
+	<gml:Curve gml:id="cv0_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93500000 136.91750000
+				34.93500000 136.91781250
+				34.93520833 136.91781250
+				34.93541667 136.91781250
+				34.93541667 136.91750000
+				34.93520833 136.91750000
+				34.93500000 136.91750000
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf0">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv0_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv1_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93479167 136.91781250
+				34.93479167 136.91812500
+				34.93500000 136.91812500
+				34.93500000 136.91781250
+				34.93479167 136.91781250
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf1">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv1_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv2_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93875000 136.91843750
+				34.93875000 136.91875000
+				34.93895833 136.91875000
+				34.93895833 136.91843750
+				34.93875000 136.91843750
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf2">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv2_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv3_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93854167 136.91875000
+				34.93854167 136.91906250
+				34.93875000 136.91906250
+				34.93875000 136.91875000
+				34.93854167 136.91875000
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf3">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv3_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv4_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.94041667 136.91687500
+				34.94041667 136.91718750
+				34.94062500 136.91718750
+				34.94062500 136.91687500
+				34.94041667 136.91687500
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf4">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv4_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv5_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93750000 136.91781250
+				34.93750000 136.91812500
+				34.93770833 136.91812500
+				34.93791667 136.91812500
+				34.93812500 136.91812500
+				34.93833333 136.91812500
+				34.93833333 136.91781250
+				34.93833333 136.91750000
+				34.93812500 136.91750000
+				34.93812500 136.91781250
+				34.93791667 136.91781250
+				34.93791667 136.91750000
+				34.93770833 136.91750000
+				34.93770833 136.91781250
+				34.93750000 136.91781250
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf5">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv5_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv6_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.95270833 136.91343750
+				34.95270833 136.91375000
+				34.95291667 136.91375000
+				34.95291667 136.91343750
+				34.95270833 136.91343750
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf6">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv6_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv7_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.92020833 136.92250000
+				34.92020833 136.92281250
+				34.92041667 136.92281250
+				34.92041667 136.92250000
+				34.92020833 136.92250000
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf7">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv7_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv8_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.91458333 136.92406250
+				34.91458333 136.92437500
+				34.91479167 136.92437500
+				34.91479167 136.92406250
+				34.91458333 136.92406250
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf8">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv8_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv9_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93291667 136.91906250
+				34.93291667 136.91937500
+				34.93312500 136.91937500
+				34.93333333 136.91937500
+				34.93354167 136.91937500
+				34.93375000 136.91937500
+				34.93395833 136.91937500
+				34.93395833 136.91906250
+				34.93375000 136.91906250
+				34.93354167 136.91906250
+				34.93333333 136.91906250
+				34.93312500 136.91906250
+				34.93291667 136.91906250
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf9">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv9_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv10_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93687500 136.91750000
+				34.93687500 136.91781250
+				34.93708333 136.91781250
+				34.93708333 136.91750000
+				34.93687500 136.91750000
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf10">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv10_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv11_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93604167 136.91781250
+				34.93604167 136.91812500
+				34.93625000 136.91812500
+				34.93645833 136.91812500
+				34.93666667 136.91812500
+				34.93666667 136.91781250
+				34.93645833 136.91781250
+				34.93625000 136.91781250
+				34.93604167 136.91781250
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf11">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv11_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv12_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93562500 136.91750000
+				34.93562500 136.91781250
+				34.93562500 136.91812500
+				34.93583333 136.91812500
+				34.93583333 136.91781250
+				34.93583333 136.91750000
+				34.93562500 136.91750000
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf12">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv12_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv13_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.93437500 136.91750000
+				34.93437500 136.91781250
+				34.93458333 136.91781250
+				34.93458333 136.91750000
+				34.93437500 136.91750000
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf13">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv13_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<gml:Curve gml:id="cv14_0">
+		<gml:segments>
+			<gml:LineStringSegment>
+				<gml:posList>
+				34.92895833 136.91968750
+				34.92895833 136.92000000
+				34.92916667 136.92000000
+				34.92916667 136.91968750
+				34.92895833 136.91968750
+				</gml:posList>
+			</gml:LineStringSegment>
+		</gml:segments>
+	</gml:Curve>
+	<gml:Surface gml:id="sf14">
+		<gml:patches>
+			<gml:PolygonPatch>
+				<gml:exterior>
+					<gml:Ring>
+						<gml:curveMember xlink:href="#cv14_0"/>
+					</gml:Ring>
+				</gml:exterior>
+			</gml:PolygonPatch>
+		</gml:patches>
+	</gml:Surface>
+	<ksj:HazardousZoneH gml:id="id0">
+		<ksj:bounds xlink:href="#sf0"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id1">
+		<ksj:bounds xlink:href="#sf1"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id2">
+		<ksj:bounds xlink:href="#sf2"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id3">
+		<ksj:bounds xlink:href="#sf3"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id4">
+		<ksj:bounds xlink:href="#sf4"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id5">
+		<ksj:bounds xlink:href="#sf5"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id6">
+		<ksj:bounds xlink:href="#sf6"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id7">
+		<ksj:bounds xlink:href="#sf7"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id8">
+		<ksj:bounds xlink:href="#sf8"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id9">
+		<ksj:bounds xlink:href="#sf9"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id10">
+		<ksj:bounds xlink:href="#sf10"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id11">
+		<ksj:bounds xlink:href="#sf11"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id12">
+		<ksj:bounds xlink:href="#sf12"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id13">
+		<ksj:bounds xlink:href="#sf13"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+	<ksj:HazardousZoneH gml:id="id14">
+		<ksj:bounds xlink:href="#sf14"/>
+		<ksj:riverNumber>2300340001</ksj:riverNumber>
+		<ksj:riverName>阿久比川</ksj:riverName>
+		<ksj:creatingType>23</ksj:creatingType>
+		<ksj:riverManager>愛知県</ksj:riverManager>
+		<ksj:hazardousZone>1</ksj:hazardousZone>
+	</ksj:HazardousZoneH>
+</ksj:Dataset>

@@ -1,0 +1,434 @@
+.layer-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background: rgba(15, 15, 30, 0.93);
+  backdrop-filter: blur(8px);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #e0e0e0;
+}
+
+.panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.panel-subtitle {
+  font-size: 11px;
+  color: #888;
+  margin: -8px 0 0;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #bbb;
+  margin: 2px 0 0;
+  letter-spacing: 0.04em;
+}
+
+.layer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.layer-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.layer-bulk-button {
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.04);
+  color: #d8d8d8;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.layer-bulk-button:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.22);
+  color: #fff;
+}
+
+.basemap-section {
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.basemap-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.basemap-button {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 9px 10px;
+  text-align: left;
+  color: #ddd;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.basemap-button:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.basemap-button.active {
+  background: rgba(156,39,176,0.14);
+  border-color: rgba(156,39,176,0.5);
+  box-shadow: inset 0 0 0 1px rgba(156,39,176,0.14);
+}
+
+.basemap-button:focus-visible {
+  outline: 2px solid rgba(156,39,176,0.75);
+  outline-offset: 2px;
+}
+
+.basemap-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f3f3f3;
+}
+
+.basemap-description {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #9b9b9b;
+}
+
+/* ── レイヤーリスト ── */
+.layer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1px solid transparent;
+}
+
+.layer-item:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.layer-item.active {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.layer-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.layer-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.layer-icon { font-size: 14px; }
+
+.layer-name {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e0e0e0;
+  line-height: 1.3;
+}
+
+.layer-sub {
+  display: block;
+  font-size: 10px;
+  color: #888;
+  line-height: 1.3;
+}
+
+.layer-item input[type="checkbox"] {
+  accent-color: #9c27b0;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.drive-section {
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.drive-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.drive-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ccc;
+  margin: 0;
+}
+
+.drive-value {
+  font-size: 11px;
+  font-weight: 700;
+  color: #f3f3f3;
+}
+
+.drive-slider {
+  width: 100%;
+  accent-color: #9c27b0;
+}
+
+.drive-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #888;
+}
+
+/* ── ORS セクション ── */
+.ors-section {
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ors-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ccc;
+  margin: 0;
+}
+
+.ors-note {
+  font-size: 10px;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ors-input {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 11px;
+  padding: 6px 8px;
+  outline: none;
+  width: 100%;
+}
+
+.ors-input:focus {
+  border-color: rgba(156,39,176,0.7);
+}
+
+.ors-link {
+  font-size: 10px;
+  color: #9c27b0;
+  text-decoration: none;
+}
+.ors-link:hover { text-decoration: underline; }
+
+/* ── 凡例 ── */
+.legend {
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.legend-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ccc;
+  margin: 0 0 6px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px dashed;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+/* ── ハザード凡例ポップアップ ── */
+.legend-btn {
+  margin-left: auto;
+  padding: 2px 7px;
+  font-size: 9.5px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #aaa;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.12s, color 0.12s;
+}
+.legend-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: #ddd;
+}
+.legend-btn.open {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.35);
+  color: #fff;
+}
+
+.hazard-legend-panel {
+  list-style: none;
+  margin: 0;
+  padding: 10px 10px 12px 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.hazard-legend-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #bbb;
+  margin: 0 0 8px;
+  letter-spacing: 0.03em;
+}
+
+.hazard-legend-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hazard-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10.5px;
+  color: #b0b0b0;
+}
+
+.hazard-legend-swatch {
+  width: 16px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.18);
+  flex-shrink: 0;
+  position: relative;
+  cursor: zoom-in;
+}
+
+.hazard-legend-swatch::after {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 72px;
+  background: var(--swatch-bg);
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 5px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.65);
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.hazard-legend-swatch:hover::after {
+  opacity: 1;
+}
+
+.hazard-legend-note {
+  margin: 8px 0 0;
+  font-size: 9.5px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ── データ注記 ── */
+.data-note {
+  font-size: 10px;
+  color: #888;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: auto;
+}
+
+.data-note p { margin: 0 0 4px; color: #aaa; }
+.data-note ul { margin: 0; padding-left: 14px; line-height: 1.8; }
+.data-note a { color: #9c27b0; text-decoration: none; }
+.data-note a:hover { text-decoration: underline; }
